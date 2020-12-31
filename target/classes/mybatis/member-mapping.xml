@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="my.memberMapper">
+	<select id="selectMember" parameterType="java.lang.String" resultType="java.lang.Integer">
+		<![CDATA[
+			SELECT COUNT(M_ID) FROM MEMBER WHERE M_ID=#{user_id}
+		]]>
+	</select>
+	
+	<insert id="insertMember" parameterType="MemberDTO">
+		<![CDATA[
+			INSERT INTO MEMBER VALUES(SQ_MIDX.NEXTVAL,#{name},#{id},#{pw},#{phone}
+			'010-2222-3333','n@n.com','서울',sysdate,'개발부','저장경로')
+			]]>
+	</insert>
+	
+</mapper>
+
+
