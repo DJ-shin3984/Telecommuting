@@ -51,6 +51,8 @@ CREATE TABLE ATTENDANCE (
 	A_IDX NUMBER(20) constraint A_PK primary key, /* 근태 번호 */
 	A_GOTIME DATE NOT NULL, /* 출근시간 */
 	A_OFFTIME DATE NOT NULL, /* 퇴근시간 */
+	A_PLACE_LAT VARCHAR2(100) NOT NULL, /* 현재 위치_위도*/
+	A_PLACE_LON VARCHAR2(100) NOT NULL, /* 현재 위치 _경도*/
 	M_IDX NUMBER(20) NOT NULL, /* 사원 번호 */
 	CONSTRAINT AM_FK FOREIGN KEY(M_IDX) REFERENCES MEMBER(M_IDX)
 );
@@ -164,6 +166,7 @@ drop sequence SQ_IWIDX;
 
 /* 부서 시퀀스 삭제 */
 drop sequence SQ_DIDX;
+
 /* 부서 업무 시퀀스 삭제 */
 drop sequence SQ_DWIDX;
 
@@ -175,6 +178,8 @@ insert into member values(sq_midx.nextval,'신동재','admin','admin',
 							'010-1234-5678','010-2222-3333','n@n.com',
 								'서울', sysdate, 105, '저장경로', 'TOKEN');
 
-
+SELECT COUNT(M_ID) FROM MEMBER WHERE M_ID='admin' AND M_PW='admin'
+select * from attendance
+INSERT INTO ATTENDANCE VALUES(SQ_AIDX.NEXTVAL,SYSDATE,SYSDATE,'3','2',106)
 
 
