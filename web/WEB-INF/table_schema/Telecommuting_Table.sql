@@ -1,3 +1,4 @@
+/* 21.01.02 수정 */
 
 SELECT * FROM tab;
 SELECT * FROM USER_SEQUENCES;
