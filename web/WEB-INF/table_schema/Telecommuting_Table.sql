@@ -1,4 +1,4 @@
-/* 21.01.02 수정2 */
+/* 21.01.02 수정 */
 
 SELECT * FROM tab;
 SELECT * FROM USER_SEQUENCES;
@@ -24,6 +24,7 @@ CREATE TABLE MEMBER (
 	D_IDX NUMBER(20) NOT NULL, /* 부서 번호 */
 	M_PHOTO VARCHAR2(100) NOT NULL, /* 사진 */
 	TOKEN VARCHAR2(200) NOT NULL, /* 토큰  */
+	M_LEVEL NUMBER(6) NOT NULL, /* 레벨 (권한 등급) */
 	CONSTRAINT MD_FK FOREIGN KEY(D_IDX) REFERENCES DEPARTMENT(D_IDX),
 	CONSTRAINT UK_MEMBER UNIQUE(M_ID, M_PHONE, M_EMAIL)
 );
@@ -74,8 +75,8 @@ CREATE TABLE DEPARTMENT_WORK (
 	DW_SCHEDULE VARCHAR2(100) NOT NULL, /* 스케줄 */
 	DW_MONTHWORK VARCHAR2(100) NOT NULL, /* 월간 업무 */
 	DW_WEEKWORK VARCHAR2(100) NOT NULL, /* 주간 업무 */
-	M_IDX NUMBER(20), /* 사원 번호 */
-	CONSTRAINT DWM_FK FOREIGN KEY(M_IDX) REFERENCES MEMBER(M_IDX)
+	D_IDX NUMBER(20) NOT NULL, /* 부서 번호 */
+	CONSTRAINT DWD_FK FOREIGN KEY(D_IDX) REFERENCES DEPARTMENT(D_IDX)
 );
 
   /* ------------------------------------------------------------- */
@@ -176,10 +177,12 @@ insert into department values(sq_midx.nextval,'개발부','010-9999-8888');
 								
 insert into member values(sq_midx.nextval,'신동재','admin','admin',
 							'010-1234-5678','010-2222-3333','n@n.com',
-								'서울', sysdate, 105, '저장경로', 'TOKEN');
+								'서울', sysdate, 105, '저장경로', 'TOKEN',1);
 
 SELECT COUNT(M_ID) FROM MEMBER WHERE M_ID='admin' AND M_PW='admin'
+select * from member
 select * from attendance
 INSERT INTO ATTENDANCE VALUES(SQ_AIDX.NEXTVAL,SYSDATE,SYSDATE,'3','2',106)
+SELECT * FROM ATTENDANCE WHERE M_IDX=106 AND A_IDX=104
 
 

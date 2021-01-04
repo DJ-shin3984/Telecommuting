@@ -13,13 +13,14 @@ public class MemberDTO {
 	private String d_idx; // 부서 번호
 	private String m_photo; // 사진
 	private String token; // 토큰
+	private int m_level; // 토큰
 	
 	public MemberDTO() {
 		super();
 	}
 
 	public MemberDTO(int m_idx, String m_name, String m_id, String m_pw, String m_phone, String m_subphone,
-			String m_email, String m_add, String m_empdate, String d_idx, String m_photo, String token) {
+			String m_email, String m_add, String m_empdate, String d_idx, String m_photo, String token, int m_level) {
 		super();
 		this.m_idx = m_idx;
 		this.m_name = m_name;
@@ -33,6 +34,7 @@ public class MemberDTO {
 		this.d_idx = d_idx;
 		this.m_photo = m_photo;
 		this.token = token;
+		this.m_level = m_level;
 	}
 
 	public int getM_idx() {
@@ -130,5 +132,13 @@ public class MemberDTO {
 	public void setToken(String token) {
 		this.token = token;
 	}
-		
+
+	public int getM_level() {
+		return m_level;
+	}
+
+	public void setM_level(int m_level) {
+		this.m_level = m_level;
+	}
+	
 }
