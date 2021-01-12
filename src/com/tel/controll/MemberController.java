@@ -1,6 +1,7 @@
 package com.tel.controll;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,11 @@ public class MemberController {
 			System.out.println("joinK 이동!");
 			return "/join/joinK";
 		}	
+	// 카카오 로그아웃 ------------------------------------------
+			@RequestMapping(value = "/kakaologout.do")
+			public String kakaologout() {
+				return "../../index";
+			}	
 		
 		// 카카오 로그인------------------------------------------
 		@RequestMapping(value = "/kakaologin.do" ,produces="application/json;charset=UTF-8",  method = {RequestMethod.POST,  RequestMethod.GET})
@@ -217,7 +223,29 @@ public class MemberController {
 			System.out.println("로긘 실패");
 			return "login/logFail";
 		}
-		
 	}
-
+	
+	// 로그아웃------------------------------------------
+	@RequestMapping(value="/logout.do")
+	public String logout(HttpServletRequest request) {
+		System.out.println("로그아웃");
+		HttpSession session=request.getSession();
+		MemberDTO dto = null;
+		try {
+			dto=(MemberDTO)session.getAttribute("member");
+		} catch (Exception e) {
+			e.printStackTrace();
+			dto=null;
+		}
+		if(dto != null){
+			System.out.println("로그아웃");
+			session.removeAttribute("attDTO"); 
+			session.removeAttribute("midx"); 
+			session.removeAttribute("didx"); 
+			session.removeAttribute("member"); 
+			session.removeAttribute("iwlistSessiom"); 
+			session.removeAttribute("dwlistSessiom"); 
+		}
+		return "/login/logout";
+	}
 }

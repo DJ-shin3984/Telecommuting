@@ -29,7 +29,6 @@ import com.tel.model.MainService;
 			super();
 			this.mainService = mainService;
 		}
-		
 
 		//메인 페이지 출력
 		@RequestMapping(value="/mainDP.do") 
