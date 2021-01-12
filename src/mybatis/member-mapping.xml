@@ -4,30 +4,43 @@
 
 <mapper namespace="my.memberMapper">
 	
+	<!-- 아이디 중복체크 -->
+	<select id="selectMember" parameterType="java.lang.String" resultType="java.lang.Integer">
+		<![CDATA[
+			SELECT COUNT(M_ID) FROM MEMBER WHERE M_ID=#{user_id}
+		]]>
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="insertMember" parameterType="MemberDTO">
+		<![CDATA[
+			INSERT INTO MEMBER VALUES(SQ_MIDX.NEXTVAL,#{m_name},#{m_id},#{m_pw},
+			#{m_phone},#{m_subphone},#{m_email},#{m_add},#{m_empdate},#{d_idx},
+			'저장','토큰',#{m_level})
+ 		]]>
+	</insert>
+	
+	<!-- 로그인 -->	
 	<select id="checklogin" parameterType="MemberDTO" resultType="MemberDTO">
 		<![CDATA[
 			SELECT * FROM MEMBER WHERE M_ID=#{m_id} AND M_PW=#{m_pw}
  		]]>
 	</select>
 	
-	<insert id="onTime" parameterType="MemberDTO">
+	<!-- 사원번호로 사원 정보 가져오기 -->	
+	<select id="selectMemberInfo" parameterType="java.lang.Integer" resultType="MemberDTO">
 		<![CDATA[
-			INSERT INTO ATTENDANCE VALUES(SQ_AIDX.NEXTVAL,SYSDATE,SYSDATE,#{a_place_lat},#{a_place_lon},#{m_idx})
+			SELECT * FROM MEMBER WHERE M_IDX=#{midx}
  		]]>
-	</insert>
+	</select>
 	
-<!-- 	<select id="selectMember" parameterType="java.lang.String" resultType="java.lang.Integer"> -->
-<!-- 		<![CDATA[ -->
-<!-- 			SELECT COUNT(M_ID) FROM MEMBER WHERE M_ID=#{user_id} -->
-<!-- 		]]> -->
-<!-- 	</select> -->
+	<!-- 부서목록 다 가져오기 -->	
+	<select id="depList" resultType="DepartmentDTO">
+		<![CDATA[
+			SELECT * FROM DEPARTMENT
+ 		]]>
+	</select>
 	
-<!-- 	<insert id="insertMember" parameterType="MemberDTO"> -->
-<!-- 		<![CDATA[ -->
-<!-- 			INSERT INTO MEMBER VALUES(SQ_MIDX.NEXTVAL,#{name},#{id},#{pw},#{phone} -->
-<!-- 			'010-2222-3333','n@n.com','서울',sysdate,'105','저장경로','TOKEN') -->
-<!-- 			]]> -->
-<!-- 	</insert> -->
 </mapper>
 
 

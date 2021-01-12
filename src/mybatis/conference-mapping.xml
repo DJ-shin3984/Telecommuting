@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="my.conferenceMapper">
+
+	<!-- 클릭한 부서 회의게시판 리스트 -->
+	<select id="CFlist" parameterType="java.lang.Integer" resultType="ConferenceDTO">
+		<![CDATA[
+			SELECT * FROM CONFERENCE
+			WHERE D_IDX=#{d_idx}
+			ORDER BY C_IDX DESC
+		]]>
+	</select>
+
+	<!-- 회의록 작성 -->
+	<insert id="insertCF" parameterType="ConferenceDTO">
+		<![CDATA[
+			INSERT INTO CONFERENCE
+			VALUES(SQ_CIDX.NEXTVAL, #{c_Title}, #{c_Content}, SYSDATE, #{m_idx}, #{d_idx} )
+		]]>
+	</insert>
+
+	<!-- 게시글 상세보기 -->
+	<select id="CFdetail" parameterType="java.lang.Integer" resultType="ConferenceDTO">
+		<![CDATA[
+			SELECT * FROM CONFERENCE WHERE C_IDX=#{c_idx}
+		]]>
+	</select>
+
+
+
+	<!-- 회의록 수정하기 -->
+	<update id="updateConference" parameterType="ConferenceDTO">
+		<![CDATA[
+			UPDATE CONFERENCE SET 
+			C_TITLE=#{c_Title}, C_CONTENT=#{c_Content}, C_DATE=TO_DATE(#{c_Date},'yyyymmdd')
+			where c_IDX=#{c_Idx}
+		]]>
+	</update>
+
+	<!-- 회의록 삭제하기 -->
+	<delete id="deleteConference" parameterType="java.lang.Integer">
+		<![CDATA[
+			delete conference where c_idx=#{cIdx}
+		]]>
+	</delete>
+
+
+</mapper>
+
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="my.attendanceMapper">
+	
+	<!-- 출근 check  -->
+	<select id="checkTime" parameterType="AttendanceDTO" resultType="java.lang.Integer">
+		<![CDATA[
+			SELECT COUNT(M_IDX) FROM ATTENDANCE
+			WHERE M_IDX=#{m_idx} and A_GOTIME LIKE '%'||#{a_goTime}||'%'
+		]]>
+	</select>
+	
+	<!-- side   -->
+	<select id="checkAtt" parameterType="AttendanceDTO" resultType="AttendanceDTO">
+		<![CDATA[
+			SELECT * FROM ATTENDANCE
+			WHERE M_IDX=#{m_idx} and A_GOTIME LIKE '%'||#{a_goTime}||'%'
+		]]>
+	</select>
+	
+	<!-- 출근,위도경도  -->
+	<insert id="onTime" parameterType="AttendanceDTO">
+		<![CDATA[
+			INSERT INTO ATTENDANCE VALUES(SQ_AIDX.NEXTVAL, #{a_goTime}, #{a_offTime}, 
+			#{a_place_lat}, #{a_place_lon}, #{m_idx}, #{d_idx})
+ 		]]>
+	</insert>
+	
+	<!-- 퇴근시간 수정 -->
+	<update id="offTime" parameterType="AttendanceDTO">
+		<![CDATA[
+			UPDATE ATTENDANCE SET A_OFFTIME=#{a_offTime}, A_PLACE_LAT=#{a_place_lat}, A_PLACE_LON=#{a_place_lon}
+			WHERE M_IDX=#{m_idx} and A_GOTIME LIKE '%'||#{a_goTime}||'%'
+		]]>
+	</update>
+	
+	<!-- 부서 사원 리스트   -->
+	<select id="dMember" parameterType="AttendanceDTO" resultType="AttendanceDTO">
+		<![CDATA[
+			SELECT MEMBER.M_IDX ,M_NAME, A_GOTIME
+			FROM ATTENDANCE,MEMBER
+			WHERE MEMBER.M_IDX=ATTENDANCE.M_IDX AND MEMBER.D_IDX=#{d_idx}
+			and ATTENDANCE.A_GOTIME LIKE '%'||#{a_goTime}||'%'
+		]]>
+	</select>
+	
+</mapper>
+
+

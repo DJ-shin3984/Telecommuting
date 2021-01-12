@@ -22,18 +22,19 @@ public class MemberDAO {
 		factory.openSession().insert("my.memberMapper.onTime",att);
 	}
 
-//	public int selectMember(String user_id) {
-//		System.out.println("dao user id: "+user_id);
-//		int n=factory.openSession().selectOne("my.memberMapper.selectMember",user_id);
-//		System.out.println("dao: "+n);
-//		return n;
-//	}
-//
-//	public int insertMember(MemberDTO member) {
-//		System.out.println("회원가입 다오");
-//		int n=factory.openSession().insert("my.memberMapper.insertMember",member);
-//		return n;
-//	}
+	// 회원가입
+	public int insertMember(MemberDTO member) {
+		int n=factory.openSession().insert("my.memberMapper.insertMember",member);
+		return n;
+	}
+
+	// 아이디 중복체크
+	public int selectMember(String user_id) {
+		int n=factory.openSession().selectOne("my.memberMapper.selectMember",user_id);
+		System.out.println("dao: "+n);
+		return n;
+	}
+
 
 }
 

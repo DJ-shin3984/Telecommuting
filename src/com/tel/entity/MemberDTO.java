@@ -13,7 +13,7 @@ public class MemberDTO {
 	private String d_idx; // 부서 번호
 	private String m_photo; // 사진
 	private String token; // 토큰
-	private int m_level; // 토큰
+	private int m_level; // 권한접근LV
 	
 	public MemberDTO() {
 		super();

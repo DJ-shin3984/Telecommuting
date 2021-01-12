@@ -1,5 +1,7 @@
 package com.tel.model;
 
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,37 +20,35 @@ public class MemberService {
 	}
 	
 	// 로그인 (Select)
-	public MemberDTO checklogin(MemberDTO member) {
-		member = memberDao.checklogin(member);
-		return member;
-	}
+		public MemberDTO checklogin(MemberDTO member) throws Exception {
+			Random rd = new Random();
+			int rdNum = rd.nextInt(99999);
+			if(member != null) {
+				member.setM_pw(Sha256.MySha256(member.getM_pw()));
+				member.setToken(Sha256.MySha256(member.getM_phone()+rdNum));
+				System.out.println("멤버 토큰:"+member.getToken());
+			}
+			member = memberDao.checklogin(member);
+			return member;
+		}
 
 	public void onTime(AttendanceDTO att) {
 		memberDao.onTime(att);
 	}
-	
-//	//로그인 성공시 현재위치
-//	public AttendanceDTO onTime() {
-//		AttendanceDTO att = new AttendanceDTO();
-//		
-//		att =memberDao.onTime();
-//		return att;
-//	}
 
-//	//아이디 중복체크 (Select)
-//	public int selectMember(String user_id) {
-//		return memberDao.selectMember(user_id);
-//	}
-//	
-//	//회원가입 (Insert)
-//	public int insertMember(MemberDTO member) {
-//		System.out.println("회원가입 서비스");
-//		return memberDao.insertMember(member);
-//	}
-//	//로그인(select)
-//	public MemberDTO checklogin(String id, String pwd) {
-//		MemberDTO member = new MemberDTO(id,pwd);
-//		return memberDao.checklogin(member);
-//	}
+	//회원가입 (Insert)
+	public int insertMember(MemberDTO member) throws Exception {
+		if(member != null) {
+			member.setM_pw(Sha256.MySha256(member.getM_pw()));
+		}
+		int n = memberDao.insertMember(member);
+		System.out.println("멤버 비번:"+member.getM_pw());
+		return n;
+	}
+
+	//아이디 중복체크 (Select)
+	public int selectMember(String user_id) {
+		return memberDao.selectMember(user_id);
+	}
 	
 }

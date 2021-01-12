@@ -6,21 +6,25 @@ public class AttendanceDTO {
 	private String a_offTime; // 퇴근시간
 	private String a_place_lat; // 현재위치_위도
 	private String a_place_lon; // 현재위치_경도
+	private String m_name; // 현재위치_경도
 	private int m_idx; // 사원번호
+	private int d_idx; // 부서번호
 	
 	public AttendanceDTO() {
 		super();
 	}
 
 	public AttendanceDTO(int a_idx, String a_goTime, String a_offTime, String a_place_lat, String a_place_lon,
-			int m_idx) {
+			String m_name, int m_idx, int d_idx) {
 		super();
 		this.a_idx = a_idx;
 		this.a_goTime = a_goTime;
 		this.a_offTime = a_offTime;
 		this.a_place_lat = a_place_lat;
 		this.a_place_lon = a_place_lon;
+		this.m_name = m_name;
 		this.m_idx = m_idx;
+		this.d_idx = d_idx;
 	}
 
 	public int getA_idx() {
@@ -63,6 +67,14 @@ public class AttendanceDTO {
 		this.a_place_lon = a_place_lon;
 	}
 
+	public String getM_name() {
+		return m_name;
+	}
+
+	public void setM_name(String m_name) {
+		this.m_name = m_name;
+	}
+
 	public int getM_idx() {
 		return m_idx;
 	}
@@ -71,4 +83,12 @@ public class AttendanceDTO {
 		this.m_idx = m_idx;
 	}
 
+	public int getD_idx() {
+		return d_idx;
+	}
+
+	public void setD_idx(int d_idx) {
+		this.d_idx = d_idx;
+	}
+	
 }

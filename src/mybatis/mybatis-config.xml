@@ -5,11 +5,22 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.tel.entity.MemberDTO" alias="MemberDTO"/>
+		<typeAlias type="com.tel.entity.AttendanceDTO" alias="AttendanceDTO"/>
+		<typeAlias type="com.tel.entity.Individual_work_DTO" alias="IW_DTO"/>
+		<typeAlias type="com.tel.entity.Department_work_DTO" alias="DW_DTO"/>
+		<typeAlias type="com.tel.entity.DepartmentDTO" alias="DepartmentDTO"/>
+		<typeAlias type="com.tel.entity.ConferenceDTO" alias="ConferenceDTO"/>
+		<typeAlias type="com.tel.entity.BoardDTO" alias="BoardDTO"/>
 	</typeAliases>
 	
 	<!-- 쿼리문 -->
 	<mappers>
 		<mapper resource="mybatis/member-mapping.xml"/>
+		<mapper resource="mybatis/main-mapping.xml"/>
+		<mapper resource="mybatis/conference-mapping.xml"/>
+		<mapper resource="mybatis/addBook-mapping.xml"/>
+		<mapper resource="mybatis/board-mapping.xml"/>
+		<mapper resource="mybatis/attendance-mapping.xml"/>
 	</mappers>
 	
 </configuration>

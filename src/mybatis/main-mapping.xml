@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="my.mainMapper">
+	
+	<!-- 개인업무 리스트 조회 -->
+	<select id="iw_list" parameterType="java.lang.Integer" resultType="IW_DTO">
+		<![CDATA[
+			SELECT * FROM INDIVIDUAL_WORK WHERE M_IDX=#{mIdx}
+		]]> 
+	</select>
+	
+	<!-- 개인업무 추가 -->
+	<insert id="IW_Insert" parameterType="IW_DTO">
+		<![CDATA[
+			INSERT INTO INDIVIDUAL_WORK(IW_IDX,IW_TITLE,IW_CONTENT,M_IDX)
+			VALUES(SQ_IWIDX.nextval,#{iw_title}, #{iw_content}, #{m_idx}) 
+ 			]]> 
+	</insert>
+	
+	<!-- 개인업무 삭제 -->
+	<delete id="IWDelete" parameterType="java.lang.Integer">
+		<![CDATA[
+			DELETE FROM INDIVIDUAL_WORK WHERE IW_IDX=#{iw_idx} 
+		]]>
+	</delete>
+	
+	<!-- 개인업무 수정 -->
+	<update id="IWUpdate" parameterType="IW_DTO">
+		<![CDATA[
+			UPDATE INDIVIDUAL_WORK SET IW_TITLE=#{iw_title}, IW_CONTENT=#{iw_content} WHERE IW_IDX=#{iw_idx}
+			
+			]]>
+	</update>
+	
+	<!-- 부서업무 리스트 불러오기 -->
+	<select id="dw_list" parameterType="java.lang.Integer" resultType="DW_DTO">
+		<![CDATA[
+			SELECT * FROM DEPARTMENT_WORK WHERE D_IDX = #{didx}
+		]]>
+	</select>
+	
+	<!-- 부서업무 추가 -->
+	<insert id="DWinsert" parameterType="DW_DTO">
+		<![CDATA[
+			INSERT INTO DEPARTMENT_WORK(DW_IDX, DW_TITLE, DW_CONTENT, DW_SCHEDULE, DW_MONTHWORK, DW_WEEKWORK, D_IDX)
+			VALUES(SQ_DWIDX.NEXTVAL, #{dw_title}, #{dw_content}, #{dw_schedule}, #{dw_monthwork}, #{dw_weekwork}, #{d_idx})
+		]]>
+	</insert>	
+	
+	<!-- 부서업무 삭제 -->
+	<delete id="DWDelete" parameterType="java.lang.Integer">
+		<![CDATA[
+			DELETE FROM DEPARTMENT_WORK WHERE DW_IDX = #{dw_idx}
+		]]>
+	</delete>
+	
+	<!-- 부서업무 수정 -->
+	<update id="DWUpdate" parameterType="DW_DTO">
+		<![CDATA[
+			UPDATE  DEPARTMENT_WORK SET 
+			DW_TITLE=#{dw_title}, DW_CONTENT=#{dw_content} , DW_SCHEDULE=#{dw_schedule} ,DW_MONTHWORK=#{dw_monthwork} ,
+			DW_WEEKWORK=#{dw_weekwork}  WHERE D_IDX = #{d_idx}
+		]]>
+	</update>
+	
+	<!-- 부서명 가져오기 -->
+	<select id="depName" parameterType="java.lang.Integer" resultType="java.lang.String">
+		<![CDATA[
+			SELECT D_NAME FROM DEPARTMENT WHERE D_IDX = #{dIdx}
+		]]>
+	</select>
+</mapper>
+
+

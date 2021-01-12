@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="my.addBookMapper">
+
+	<!-- 클릭한 부서 회의게시판 리스트 -->
+	<select id="addBooklist" parameterType="java.lang.Integer" resultType="MemberDTO">
+		<![CDATA[
+			SELECT * FROM MEMBER WHERE D_IDX=#{d_idx} ORDER BY M_LEVEL,M_IDX
+		]]>
+	</select>
+
+	<!-- 멤버 프로필 수정하기 -->
+	<update id="ABupdate" parameterType="MemberDTO">
+		<![CDATA[
+			UPDATE MEMBER SET 
+			M_NAME=#{m_name}, M_ID=#{m_id}, M_PW=#{m_pw}, M_PHONE=#{m_phone}, 
+			M_SUBPHONE=#{m_subphone}, M_EMAIL=#{m_email}, M_ADD=#{m_add}, 
+			M_EMPDATE=#{m_empdate}, D_IDX=#{d_idx}, M_LEVEL=#{m_level}
+			where M_IDX=#{m_idx}
+		]]>
+	</update>
+
+	<!-- 사원 삭제 -->
+	<delete id="MemberDelete" parameterType="java.lang.Integer" >
+		<![CDATA[
+			DELETE MEMBER WHERE M_IDX=#{m_idx}
+		]]>
+	</delete>
+	
+</mapper>
+
+
