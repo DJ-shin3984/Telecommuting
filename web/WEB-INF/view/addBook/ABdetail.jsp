@@ -10,6 +10,7 @@
 <body>
 	<div>
 		<span>사원 번호: ${member.m_idx}</span><br>
+		<span>사진: <img src="/Tel/resources/profileImage/${member.m_photo}" width="50" height="50" border="0"></span><br>
 		<span>이름: ${member.m_name}</span><br>
 		<span>아이디: ${member.m_id} </span><br>
 		<span>비밀번호: ${member.m_pw}</span><br>

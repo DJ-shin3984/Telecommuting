@@ -132,8 +132,8 @@
 		<div class="contain">
 			<div class="wrap">
 				<div class="body">
-					<form id="joinWriteForm" action="insertJoin.do" method="POST">
-<!-- 					<form id="joinWriteForm" action="insertJoin.do" method="POST" enctype="multipart/form-data"> -->
+<!-- 					<form id="joinWriteForm" action="insertJoin.do" method="POST"> -->
+					<form id="joinWriteForm" action="insertJoin.do" method="POST" enctype="multipart/form-data">
 						<table align="center">
 							
 							<tr>
@@ -183,10 +183,10 @@
 							<td><input type="text" name="m_empdate"></td>
 							</tr>
 							
-<!-- 							<tr> -->
-<!-- 							<td>사진 </td> -->
-<!-- 							<td><input type="file" name="m_photo"></td> -->
-<!-- 							</tr> -->
+							<tr>
+							<td>사진 </td>
+							<td><input type="file" name="m_photo"></td>
+							</tr>
 							
 							<tr>
 							<td>부서번호(개발부:105)</td>
