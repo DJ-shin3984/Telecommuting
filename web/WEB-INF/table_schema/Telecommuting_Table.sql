@@ -181,12 +181,15 @@ drop sequence SQ_DWIDX;
 
   /* ------------------------------------------------------------- */
 select * from department;
+
 insert into department values(sq_didx.nextval,'개발부','010-9999-8888');
 insert into department values(sq_didx.nextval,'경영기획부','010-9999-8888');
 insert into department values(sq_didx.nextval,'영업부','010-9999-8888');
 insert into department values(sq_didx.nextval,'생산부','010-9999-8888');
 insert into department values(sq_didx.nextval,'인사과','010-9999-8888');
 insert into department values(sq_didx.nextval,'최고부','010-9999-8888');
+
+
 								
 insert into member values(sq_midx.nextval,'신동재','admin','8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
 							'010-1234-5678','010-2222-3333','n@n.com',

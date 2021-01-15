@@ -7,7 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="asset/css/Index.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/join.css?v=1">
+
 
 	<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -129,82 +130,79 @@
 
 </head>
 	<body>
-		<div class="contain">
-			<div class="wrap">
-				<div class="body">
+		<div class="frame_logobar">
+		<div class="logo_title">Telecommuting</div>
+		</div>
+		
+		<div class="frame_join">
+		<div class="frame_join_left">
+					<div class="join_title">Join</div>
 					<form id="joinWriteForm" action="insertJoin.do" method="POST">
-<!-- 					<form id="joinWriteForm" action="insertJoin.do" method="POST" enctype="multipart/form-data"> -->
-						<table align="center">
+							<div class="join_div">
+							<span>이름</span>
+							<input type="text" class="form-control input_text" id="user_name" name="m_name" value="${KPF.getProperties().getNickname()}">
+							</div>
+							<div class="join_div"><span>아이디</span>
+							<input type="text" class="form-control input_text" id="user_id" name="m_id" placeholder="ID" required>
+							<span id="resultID"></span>
+							</div>
 							
-							<tr>
-							<td>이름</td>
-							<td><input type="text" class="form-control" id="user_name" name="m_name" value="${KPF.getProperties().getNickname()}">
-							</tr>
+							<div class="join_div">
+							<span>비밀번호</span>
+							<input type="password" name="m_pw" class="input_text">
+							</div>
 							
-							<tr>
-							<td>아이디</td>
-							<td><input type="text" class="form-control" id="user_id" name="m_id" placeholder="ID" required>
-							<span id="resultID"></span></td>
-							</tr>
+							<div class="join_div">
+							<span>비밀번호 확인</span>
+							<input type="password" name="checkPW" class="input_text">
+							<span id="resultPW"></span>
+							</div>
 							
-							<tr>
-							<td>비밀번호</td>
-							<td><input type="password" name="m_pw"></td>
-							</tr>
+							<div class="join_div">
+							<span>연락처</span>
+							<input type="text" name="m_phone" class="input_text">
+							</div>
 							
-							<tr>
-							<td>비밀번호 확인</td>
-							<td><input type="password" name="checkPW">
-							<span id="resultPW"></span></td>
-							</tr>
+							<div class="join_div">
+							<span>비상연락처</span>
+							<input type="text" name="m_subphone" class="input_text">
+							</div>
 							
-							<tr>
-							<td>연락처</td>
-							<td><input type="text" name="m_phone"></td>
-							</tr>
+							<div class="join_div">
+							<span>이메일</span>
+							<input type="text" name="m_email" value="${KPF.getKakao_account().getEmail()}" class="input_text">
+							</div>
 							
-							<tr>
-							<td>비상연락처 </td>
-							<td><input type="text" name="m_subphone"></td>
-							</tr>
+							<div class="join_div">
+							<span>주소</span> 
+							<input id="add" type="text" name="m_add" class="input_text">
+							<input type="button" value="검색" onclick="postFunction()" class="btn">
+							</div>							
+							<div class="join_div">
+							<span>입사일</span> 
+							<input type="text" name="m_empdate" class="input_text">
+							</div>
 							
-							<tr>
-							<td>이메일 </td>
-							<td><input type="text" name="m_email" value="${KPF.getKakao_account().getEmail()}"></td>
-							</tr>
+							<div class="join_div">
+							<span>부서번호(개발부:105)</span>
+							<input type="text" name="d_idx" class="input_text">
+							</div>
 							
-							<tr>
-							<td>주소 </td>
-							<td><input id="add" type="text" name="m_add"><input type="button" value="검색" onclick="postFunction()"></td>
-							</tr>
+							<div class="join_div">
+							<span>권한접근 레벨</span>
+							<input type="text" name="m_level" class="input_text">
+							 </div>
 							
-							<tr>
-							<td>입사일 </td>
-							<td><input type="text" name="m_empdate"></td>
-							</tr>
+							 
+							<div class="input_bar"><input type="submit" value="회원가입" class="btn_bottom"> <input type="button" class="btn_bottom" onclick="location.href='<%=request.getContextPath()%>/index.jsp'" value="뒤로가기"></div>
 							
-<!-- 							<tr> -->
-<!-- 							<td>사진 </td> -->
-<!-- 							<td><input type="file" name="m_photo"></td> -->
-<!-- 							</tr> -->
-							
-							<tr>
-							<td>부서번호(개발부:105)</td>
-							<td><input type="text" name="d_idx"></td>
-							</tr>
-							
-							<tr>
-							<td>권한접근 레벨</td>
-							<td><input type="text" name="m_level"></td>
-							</tr>
-							
-							<tr>
-							<td colspan="2" style="text-align: center;"><input type="submit" value="회원가입"></td>
-							</tr>
-						</table>
+							 
 					</form>
-				</div>
+					</div>
+					<div class="frame_join_right">
+					<img src="css/join.jpeg">
+					
+					</div>
 			</div>
-		</div>	
 	</body>
 </html>

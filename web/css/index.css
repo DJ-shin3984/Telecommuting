@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@1,500&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap'); /* 로고적용 */
+/* font-family: 'Fira Sans Extra Condensed', sans-serif;
+font-family: 'Jeju Gothic', serif; */
+
+
+@keyframes fadeIn {
+
+    0%{
+
+        opacity: 0.4;
+    }
+
+    100%{
+        opacity:1;
+    }
+
+
+}
+
+html,body{
+		overflow-y: hidden;
+	overflow-x: hidden;
+    animation: fadeIn 1.5s ;
+    width:100%;
+    height:100%;
+    margin : 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.frame_logobar{
+	width: 100%;
+	height:55px;
+	    background-color: rgba(55, 61, 73, 0.975);
+	    display: flex;
+	    align-items: center;
+}
+
+.logo_title {
+	color:#fff;
+ font-family: 'Noto Serif KR', serif;
+    font-size:30px;
+    margin-left:20px;
+    text-shadow: 2px 1px 1px gray; 
+    transition: opacity 0.3s ;
+
+}
+
+.logo_title:hover{
+	
+	
+	opacity:0.6;
+}
+
+
+.frame_login{
+	display: flex;
+	width: 100%;
+	height: 95%;
+}
+
+.frame_login_left{
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.frame_login_left_title{
+	    font-family: 'Jeju Gothic', serif;
+	    font-size: 40px;
+    line-height: 90px;
+
+}
+
+.frame_login_left_content{
+	font-family: 'Jeju Gothic', serif;
+	font-size: 17px;
+	margin-bottom: 20px;
+	    line-height: 40px;
+}
+
+.frame_login_form{
+	
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	
+}
+
+.input_id{
+	width: 300px;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.input_pwd{
+	width: 300px;
+    height: 35px;
+    margin-bottom: 10px;
+	
+}
+
+
+.login_btn_bar{
+	
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.input_bar{
+	
+	width: 350px;
+	height:30px;
+	border-radius: 10px;	
+}
+
+.btn{
+	border-radius:8px;
+  background:#9DBCE8;
+  color:#fff;
+  border:none;
+  position:relative;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  margin-bottom: 10px;
+}
+.btn:hover{
+  background:#fff;
+  color:#9DBCE8;
+}
+.btn:before,.btn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.btn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn:hover:before,.btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+
+
+
+.frame_login_right{
+		width: 50%;
+	height: 100%;
+}
+#slide_img{
+	
+	 width: 100%;
+    height: 100%;
+}
+
