@@ -16,7 +16,7 @@
 		<![CDATA[
 			INSERT INTO MEMBER VALUES(SQ_MIDX.NEXTVAL,#{m_name},#{m_id},#{m_pw},
 			#{m_phone},#{m_subphone},#{m_email},#{m_add},#{m_empdate},#{d_idx},
-			'저장','토큰',#{m_level})
+			#{m_photo},'토큰',#{m_level})
  		]]>
 	</insert>
 	

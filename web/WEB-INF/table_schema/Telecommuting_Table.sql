@@ -1,4 +1,5 @@
-/* 21.01.12 수정 */
+
+/* 21.01.04 수정 */
 
 SELECT * FROM tab;
 SELECT * FROM USER_SEQUENCES;
@@ -181,40 +182,37 @@ drop sequence SQ_DWIDX;
 
   /* ------------------------------------------------------------- */
 select * from department;
-
 insert into department values(sq_didx.nextval,'개발부','010-9999-8888');
 insert into department values(sq_didx.nextval,'경영기획부','010-9999-8888');
 insert into department values(sq_didx.nextval,'영업부','010-9999-8888');
 insert into department values(sq_didx.nextval,'생산부','010-9999-8888');
 insert into department values(sq_didx.nextval,'인사과','010-9999-8888');
 insert into department values(sq_didx.nextval,'최고부','010-9999-8888');
-
-
 								
 insert into member values(sq_midx.nextval,'신동재','admin','8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
 							'010-1234-5678','010-2222-3333','n@n.com',
-								'서울', sysdate, 105, '저장경로', 'TOKEN',1);
+								'서울', sysdate, 105, '2021-01-09car1.png', 'TOKEN',1);
 insert into member values(sq_midx.nextval,'개똥이','aaaa','61be55a8e2f6b4e172338bddf184d6dbee29c98853e0a0485ecee7f27b9af0b4',
 							'010-1234','010-2222','n@n.com',
-								'서울', sysdate, 105, '저장경로', 'TOKEN',1);
+								'서울', sysdate, 105, '2021-01-09car1.png', 'TOKEN',1);
 insert into member values(sq_midx.nextval,'진달래','bbbb','81cc5b17018674b401b42f35ba07bb79e211239c23bffe658da1577e3e646877',
 							'010-5678','010-3333','n@n.com',
-								'서울', sysdate, 105, '저장경로', 'TOKEN',1);
+								'서울', sysdate, 105, '2021-01-09car1.png', 'TOKEN',1);
 insert into member values(sq_midx.nextval,'진달래','date','0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681',
 							'010-5678','010-3333','n@n.com',
-								'서울', sysdate, 105, '저장경로', 'TOKEN',1);
+								'서울', sysdate, 105, '2021-01-09car1.png', 'TOKEN',1);
 insert into member values(sq_midx.nextval,'소나무','cccc','b6fbd675f98e2abd22d4ed29fdc83150fedc48597e92dd1a7a24381d44a27451',
 							'010-5678','010-3333','n@n.com',
-								'서울', '21-01-11', 104, '저장경로', 'TOKEN',1);
+								'서울', '21-01-11', 104, '2021-01-09car1.png', 'TOKEN',1);
 insert into member values(sq_midx.nextval,'대나무','asdf','f0e4c2f76c58916ec258f246851bea091d14d4247a2fc3e18694461b1816e13b',
 							'010-5678','010-3333','n@n.com',
-								'서울', '21-01-11', 104, '저장경로', 'TOKEN',1);
+								'서울', '21-01-11', 104, '2021-01-09car1.png', 'TOKEN',1);
 insert into member values(sq_midx.nextval,'키보드','dddd','5bf8aa57fc5a6bc547decf1cc6db63f10deb55a3c6c5df497d631fb3d95e1abf',
 							'010-5678','010-3333','n@n.com',
-								'서울', TO_DATE('20210908','yyyymmdd'), 103, '저장경로', 'TOKEN',1);
+								'서울', TO_DATE('20210908','yyyymmdd'), 103, '2021-01-09car1.png', 'TOKEN',1);
 insert into member values(sq_midx.nextval,'달력','cal','f28c5d59eb1307e88ffc2943867931a33eaa9dbd2e246e40e60c1c12139bd960',
 							'010-5678','010-3333','n@n.com',
-								'서울', TO_DATE('20210908','yyyymmdd'), 103, '저장경로', 'TOKEN',1);
+								'서울', TO_DATE('20210908','yyyymmdd'), 103, '2021-01-09car1.png', 'TOKEN',1);
 	 
 								
 INSERT INTO ATTENDANCE VALUES(SQ_AIDX.NEXTVAL,'2021년 01월 12일 08시 40분 12초','아직 퇴근안함','3','2',100,105);

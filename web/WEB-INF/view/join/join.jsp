@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -193,7 +194,13 @@
 							<input type="text" name="m_level" class="input_text">
 							 </div>
 							
-							 
+							<div class="join_div">
+							<span>사진</span>
+							<input type="file" name="m_photo">
+							</div>
+							
+							
+							
 							<div class="input_bar"><input type="submit" value="회원가입" class="btn_bottom"> <input type="button" class="btn_bottom" onclick="location.href='<%=request.getContextPath()%>/index.jsp'" value="뒤로가기"></div>
 							
 							 
@@ -205,4 +212,5 @@
 					</div>
 			</div>
 	</body>
+
 </html>
