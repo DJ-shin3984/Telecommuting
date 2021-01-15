@@ -182,7 +182,7 @@ public class MemberController {
 		member.setM_photo(fileName);
 		
 		//저장 경로
-		String fileSaveRoute = "C:/Users/user/Documents/workspace-sts-3.9.6.RELEASE/Telecommuting_shin/web/resources/profileImage/";
+		String fileSaveRoute = "C:/Users/user/git/Telecommuting/web/resources/profileImage/";
 		System.out.println("저장 파일 이름: "+fileName);
 		
 		try (
