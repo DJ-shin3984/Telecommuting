@@ -28,6 +28,7 @@
 p:dataSource-ref="dataSource" p:configLocation="classpath:mybatis/mybatis-config.xml" p:transactionFactory-ref="factory"/>
 <bean id="factory" class="org.mybatis.spring.transaction.SpringManagedTransactionFactory"/>
 
+
 <!-- 파일 업로드로 들어오는 데이터를 처리하는 객체 -->
 <bean id="multipartResolver"
     class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

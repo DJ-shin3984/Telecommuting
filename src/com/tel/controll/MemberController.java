@@ -27,7 +27,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tel.entity.AttendanceDTO;
 import com.tel.entity.MemberDTO;
 import com.tel.model.KakaoProfile;
 import com.tel.model.MemberService;
