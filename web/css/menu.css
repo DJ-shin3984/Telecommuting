@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@1,500&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap'); 
+
+
+
+
+
+.menu_bar{
+	width:100%;
+	height: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+
+.menu_bar_btn{
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	width:280px;
+	height:100%;
+	background-color: #393D41;
+	transition: opacity 0.5s ease;
+	
+}
+
+.menu_bar_btn a{
+	font-family: 'Jeju Gothic', serif;
+	color:#FFFFFF;
+}
+
+.menu_bar_btn:hover{
+	opacity:0.8;
+}
+
+
+

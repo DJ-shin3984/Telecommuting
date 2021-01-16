@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -138,7 +137,7 @@
 		<div class="frame_join">
 		<div class="frame_join_left">
 					<div class="join_title">Join</div>
-					<form id="joinWriteForm" action="insertJoin.do" method="POST">
+					<form id="joinWriteForm" action="insertJoin.do" method="POST"   enctype="multipart/form-data">
 							<div class="join_div">
 							<span>이름</span>
 							<input type="text" class="form-control input_text" id="user_name" name="m_name" value="${KPF.getProperties().getNickname()}">

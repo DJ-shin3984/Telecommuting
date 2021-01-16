@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+
+
+.side_user_info{
+	
+	font-family: 'Jeju Gothic', serif;
+	
+}
+.side_user_info input{
+	display: inline-block;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.side_user_info_btn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom:20px;
+	
+}
+.side_user_info_btn input{
+	margin-left:3px;
+	margin-right: 3px;
+}
+
+.side_user_info_username{
+	
+	font-size: 40px;
+	margin-bottom:40px;
+	
+}
+
+.side_user_info_time{
+	
+	font-size:16px;
+	
+}
+
+.dep_task_list{
+	
+	width:90%;
+	height:40px;
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom:40px;
+	
+}
+
+
+.member_task_list{
+		border:2px solid #393D41;
+	border-radius:15px;
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom:20px;
+	padding-top:35px;
+	
+}
+
+.member_task_list_task{
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom:20px;
+	width:300px;
+}
+
+.dep_schedule_list{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom:40px;
+	border:2px solid #393D41;
+	border-radius:15px;
+	width:300px;
+	padding-top:30px;
+}
+
+.dep_schedule_list_schedule{
+	
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+}
+.dep_schedule_list_schedule input{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.side_btn{
+	border-radius:5px;
+	border:none;
+	height:20px;
+	cursor: pointer;
+	
+}
+
+
+.side_btn:hover{
+	opacity: 0.8;
+	
+}
+
+.dep_task_title{
+		font-family: 'Jeju Gothic', serif;
+	
+	display:block;
+	width:100px;
+	height:40px;
+	position:relative;
+	top:20px;
+	background-color: #fff;
+	border: none;
+	border-radius: 10px;
+	text-align: center;
+	line-height: 38px;
+}
+
+.dep_schedule_title{
+			font-family: 'Jeju Gothic', serif;
+	
+	display:block;
+	width:100px;
+	height:40px;
+	position:relative;
+	top:20px;
+	background-color: #fff;
+	border: none;
+	border-radius: 10px;
+	text-align: center;
+	line-height: 38px;
+	
+}
+
+
+

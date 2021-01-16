@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@1,500&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap'); 
+
+
+
+html,body{
+	background: linear-gradient(to left, #8e9eab, #eef2f3);
+	width:100%;
+	height:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+
+
+.createBoardePg_frame{
+	width:1680px;
+	height:90%;
+	display: flex;
+	margin-top:20px;
+	justify-content: center;
+	align-items: center;
+}
+
+.createBoardePg_frame_main{
+	
+	display: flex;
+	flex-direction: column;
+	width:700px;
+	height:600px;
+	
+}
+.input_form{
+	
+	width: 100%;
+	height:100%;
+	
+}
+
+
+.input_title{
+	border:none;
+	background-color:none;
+	font-size:35px;
+	width:95%;
+	border-radius:10px;
+	margin-bottom:20px;
+		padding-left:10px;
+				font-family: 'Jeju Gothic', serif;
+	
+}
+
+.input_content{
+	border:none;
+	background-color:none;
+	height:50px;
+	font-size:20px;
+	width:95%;
+	height:70%;
+	border-radius:10px;
+	margin-bottom:20px;
+	padding-left:10px;
+	padding-top:10px;
+				font-family: 'Jeju Gothic', serif;
+	
+}
+
+
+
+
+.input_btn{
+	
+	display: block;
+	width:150px;
+	height:40px;
+	background-color: #e8eae6;
+	border:none;
+	box-shadow: 3px 2px 5px;
+	border-radius: 10px;
+	transition: all 0.5s ease;
+	font-family: 'Jeju Gothic', serif;
+	font-size:17px;
+	cursor: pointer;
+	margin-left:520px;
+}
+
+
+
+.input_btn:hover{
+	
+	opacity: 0.5;
+	
+}
+

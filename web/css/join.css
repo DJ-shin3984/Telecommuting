@@ -109,9 +109,9 @@ html,body{
 
 #joinWriteForm{
 	
-		margin: 20px auto;
+	margin: 20px auto;
     width: 550px;
-    height: 560px;
+    height: 600px;
     border-radius: 8px/7px;
     background-color:#F6F6F6;
     box-shadow: 5px 5px 5px rgba(0,0,0,.31);
@@ -128,14 +128,14 @@ html,body{
 
 .join_div span{
 	display: inline-block;
-	width: 160px;
+	width: 230px;	
 }
 
 .input_text{
-	font-family: 'Jeju Gothic', serif;
+	
 	padding-left:10px;
 	border-radius: 5px;	
-	width:250px;
+width: 200px;
 	height:23px;
 	font-size:18px;
 	margin-left:20px;
@@ -227,3 +227,13 @@ border-radius:8px;
 	align-items:center;
 	margin-top:40px;
 }
+
+#resultID{
+		display:block;
+	
+}
+
+#resultPW{
+	display:block;
+}
+

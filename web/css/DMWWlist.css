@@ -1,0 +1,101 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@1,500&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap'); 
+
+
+
+html,body{
+	background: linear-gradient(to left, #8e9eab, #eef2f3);
+	width:100%;
+	height:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+
+
+
+.DMWWlist_frame{
+	
+	width:1680px;
+	height:90%;
+	display: flex;
+	margin-top:20px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	
+}
+
+
+.DMWWlist_frame_depName{
+	
+	color:#fff;
+	font-family: 'Jeju Gothic', serif;
+    font-size:60px;
+    margin-left:20px;
+    text-shadow: 2px 1px 1px gray; 
+	width:400px;
+	height: 110px;
+	border:none;
+	background-color: #222831;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15px;	
+		margin-bottom:80px;
+	
+}
+
+.DMWWlist_frame_month_task{
+		color:#000;
+	font-family: 'Jeju Gothic', serif;
+    font-size:30px;
+    margin-left:20px;
+    text-shadow: 2px 1px 1px gray; 
+		border-left:4px solid black;
+		border-right:4px solid black;
+	
+		border-radius: 15px;
+		width:600px;	
+	height:120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+		margin-bottom:80px;
+	
+	
+}
+
+
+
+.DMWWlist_frame_week_task{
+		color:#000;
+	font-family: 'Jeju Gothic', serif;
+    font-size:45px;
+    margin-left:30px;
+    text-shadow: 2px 1px 1px gray; 
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left:10px;
+	border-left:4px solid black;
+		border-right:4px solid black;
+		border-radius: 15px;
+			width:800px;	
+	
+		height:120px;
+	
+}
+
+
+
+
+
+
+
+

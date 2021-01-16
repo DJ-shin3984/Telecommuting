@@ -1,0 +1,124 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@1,500&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap'); 
+
+
+
+
+
+html,body{
+	background: linear-gradient(to left, #8e9eab, #eef2f3);
+	width:100%;
+	height:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+
+.cfDetail_frame{
+	width:1000px;
+		height:90%;
+	display: flex;
+	flex-direction:column;
+	margin-top:140px;
+}
+
+
+.cfDetail_frame_title{
+	
+	padding-top:20px;
+	padding-bottom: 20px;
+	padding-left:20px;
+	
+		border-radius: 15px;
+	border-left:4px solid black;
+	
+	font-size:40px;
+	
+			font-family: 'Jeju Gothic', serif;
+	
+	width:500px;
+	
+	
+}
+
+
+
+.cfDetail_frame_content{
+	
+	margin-top:50px;
+	margin-bottom:50px;
+		
+	padding-top:40px;
+	padding-bottom: 40px;
+	padding-left:20px;
+	
+		border-radius: 15px;
+	border-left:4px solid black;
+	
+	font-size:25px;
+	
+			font-family: 'Jeju Gothic', serif;
+	
+	
+	width:900px;
+	
+	
+}
+
+.cfDetail_frame_date{
+	
+	
+		margin-top:50px;
+	margin-bottom:50px;
+		
+	padding-top:10px;
+	padding-bottom: 10px;
+	padding-left:20px;
+	
+		border-radius: 10px;
+	border-left:4px solid black;
+	
+	font-size:15px;
+	color:#565656;
+	
+			font-family: 'Jeju Gothic', serif;
+	
+	
+	width:900px;
+	
+	
+}
+
+
+
+.cfDetail_frame_btn{
+	
+	display: block;
+	width:200px;
+	height:50px;
+	background-color: #e8eae6;
+	border:none;
+		box-shadow: 3px 2px 5px;
+		border-radius: 10px;
+		transition: all 0.5s ease;
+		font-family: 'Jeju Gothic', serif;
+		font-size:22px;
+	
+	
+}
+
+
+
+.cfDetail_frame_btn:hover{
+	
+	transform:translate(0px, -10px);		
+	opacity: 0.6;
+	
+}
+
+
+
