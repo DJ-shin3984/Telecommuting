@@ -42,22 +42,20 @@
 					<c:if test="${!empty dm_list}">
 						<c:forEach var="ob" items="${dm_list}" varStatus="status">
 							<c:set var="TextValue" value="${ob.a_goTime}" />
-							<%-- 					사이즈 : ${fn:length(TextValue) }<br> --%>
 							<div id="attlist+${status.index}">${ob.m_name}:
 								${fn:substring(TextValue,14,21) }</div>
 							<br>
 						</c:forEach>
 					</c:if>
+					<div>
+						<input id="time" type="button" value="근태 관리" onclick="sendLink()" class="attMain_btn">
+					</div>
 				</c:when>
 
 			</c:choose>
 		</div>	
 		
-		<div>
-			<input id="time" type="button" value="근태 관리" onclick="sendLink()" class="attMain_btn">
 		
-		
-		</div>
 		</div>
 		<div class="attMain_frame_right">
 			<c:import url="/WEB-INF/view/side.jsp" />

@@ -8,7 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:url var="url" value="mainDP.do?midx=${member.getM_idx()}&didx=${member.getD_idx()}"></c:url>
+<%-- 	<c:url var="url" value="mainDP.do?midx=${member.getM_idx()}&didx=${member.getD_idx()}"></c:url> --%>
+	<c:url var="url" value="mainDP.do"></c:url>
 	<c:redirect url="${url}"/>
 </body>
 </html>

@@ -24,10 +24,10 @@ public class BoardService {
 		dto.setM_idx(midx);
 		dto.setD_idx(didx);
 		
-		System.out.println("보드 서비스1: "+dto.getB_Title());
-		System.out.println("보드 서비스2: "+dto.getB_Content());
-		System.out.println("보드 서비스3: "+dto.getM_idx());
-		System.out.println("보드 서비스4: "+dto.getD_idx());
+//		System.out.println("보드 서비스1: "+dto.getB_Title());
+//		System.out.println("보드 서비스2: "+dto.getB_Content());
+//		System.out.println("보드 서비스3: "+dto.getM_idx());
+//		System.out.println("보드 서비스4: "+dto.getD_idx());
 		
 		return dao.createBoard(dto);
 	}

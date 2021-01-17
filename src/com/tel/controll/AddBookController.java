@@ -99,7 +99,7 @@ import com.tel.model.AddBookService;
 			member.setM_email(request.getParameter("email"));
 			member.setM_add(request.getParameter("add"));
 			member.setM_empdate(request.getParameter("empdate"));
-			member.setD_idx(request.getParameter("didx"));
+			member.setD_idx(Integer.parseInt(request.getParameter("didx")));
 			member.setM_level(Integer.parseInt(request.getParameter("level")));
 			
 			int n = addBookService.ABupdate(member);

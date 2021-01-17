@@ -12,6 +12,7 @@
 <div>
 	<form action="updateBoard.do" method="post">
 	<input type="hidden" value="${bIdx}" name="bIdx">
+	<input type="hidden" value="${pg}" name="pg">
 	제목 : <input type="text" value="${bTitle}" name="bTitle"><br>
 	내용<br>
 	<textarea rows="" cols="" name="bContent">${bContent}</textarea>
