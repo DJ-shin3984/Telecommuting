@@ -16,7 +16,8 @@ pageEncoding="UTF-8" %>
 			<input type="text" placeholder="title" name="bTitle" class="input_title">
 			<br>
 			<textarea rows="" cols="" name="bContent" placeholder="content" class="input_content"></textarea>
-			<input type="hidden" name="midx" value="${midx}"><input type="hidden" name="didx" value="${didx}">
+<%-- 			<input type="hidden" name="midx" value="${midx}"><input type="hidden" name="didx" value="${didx}"> --%>
+			<input type="hidden" name="pg" value="${pg}">
 			<input type="submit" value="확인" class="input_btn">
 		</form>
 	</div>

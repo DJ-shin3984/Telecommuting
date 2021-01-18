@@ -10,7 +10,7 @@ public class MemberDTO {
 	private String m_email; // 이메일
 	private String m_add; // 주소
 	private String m_empdate; // 입사일
-	private String d_idx; // 부서 번호
+	private int d_idx; // 부서 번호
 	private String m_photo; // 사진
 	private String token; // 토큰
 	private int m_level; // 권한접근LV
@@ -20,7 +20,7 @@ public class MemberDTO {
 	}
 
 	public MemberDTO(int m_idx, String m_name, String m_id, String m_pw, String m_phone, String m_subphone,
-			String m_email, String m_add, String m_empdate, String d_idx, String m_photo, String token, int m_level) {
+			String m_email, String m_add, String m_empdate, int d_idx, String m_photo, String token, int m_level) {
 		super();
 		this.m_idx = m_idx;
 		this.m_name = m_name;
@@ -109,11 +109,11 @@ public class MemberDTO {
 		this.m_empdate = m_empdate;
 	}
 
-	public String getD_idx() {
+	public int getD_idx() {
 		return d_idx;
 	}
 
-	public void setD_idx(String d_idx) {
+	public void setD_idx(int d_idx) {
 		this.d_idx = d_idx;
 	}
 

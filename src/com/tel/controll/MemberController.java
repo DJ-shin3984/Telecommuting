@@ -173,7 +173,7 @@ public class MemberController {
 		member.setM_email(request.getParameter("m_email"));
 		member.setM_add(request.getParameter("m_add"));
 		member.setM_empdate(request.getParameter("m_empdate"));
-		member.setD_idx(request.getParameter("d_idx"));
+		member.setD_idx(Integer.parseInt(request.getParameter("d_idx")));
 		member.setM_level(Integer.parseInt(request.getParameter("m_level")));
 		
 		//파일 이름
@@ -181,7 +181,7 @@ public class MemberController {
 		member.setM_photo(fileName);
 		
 		//저장 경로
-		String fileSaveRoute = "C:/Users/kkm/git/Telecommuting/web/resources/profileImage/";
+		String fileSaveRoute = "C:/Users/user/Documents/workspace-sts-3.9.6.RELEASE/Telecommuting_shin/web/resources/profileImage/";
 		System.out.println("저장 파일 이름: "+fileName);
 		
 		try (
@@ -217,7 +217,8 @@ public class MemberController {
 	// 로그인------------------------------------------
 	@RequestMapping(value = "/checklogin.do" , method = RequestMethod.POST)
 	public String checklogin(HttpServletRequest request, Model model) throws Exception {
-
+		HttpSession session=request.getSession();
+		
 		MemberDTO member = new MemberDTO();
 		
 		String loginId = request.getParameter("id");
@@ -232,11 +233,12 @@ public class MemberController {
 //			att.setM_idx(member.getM_idx());
 //			memberService.onTime(att);
 			
-			System.out.println("didx: "+member.getD_idx());
-			System.out.println("midx: "+member.getM_idx());
+			System.out.println("login didx: "+member.getD_idx());
+			System.out.println("login midx: "+member.getM_idx());
 			
 			model.addAttribute("member",member); 
-			
+			session.setAttribute("midx", member.getM_idx());
+			session.setAttribute("didx", member.getD_idx());
 			return "/login/logOK";
 		}else {
 			System.out.println("로긘 실패");

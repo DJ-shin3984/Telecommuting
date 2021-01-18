@@ -26,7 +26,7 @@
 
 					<c:forEach items="${list}" var="ob">
 						<div class="boardList_frame_left_content_oneline">
-						<a href="readBoard.do?bIdx=${ob.b_Idx}&midx=${midx}&didx=${didx}">
+						<a href="readBoard.do?bIdx=${ob.b_Idx}&midx=${midx}&didx=${didx}&pg=${pg}">
 							<span class="idx">${ob.b_Idx}</span> <span class="title">${ob.b_Title}</span>
 							<span class="date">${ob.b_Date}</span><%--  <span class="name">${ob.m_Name}</span> --%>
 							</a>
@@ -39,7 +39,8 @@
 			
 			<div class="page_number">${paging.getPagingHTML()}</div>
 			<button class="boardList_btn"
-				onclick="location.href='createBoardePg.do?midx=${midx}&didx=${didx}'">새로운
+<%-- 				onclick="location.href='createBoardePg.do?midx=${midx}&didx=${didx}'">새로운 --%>
+				onclick="location.href='createBoardePg.do?pg=${pg}'">새로운
 				글 작성</button>
 		</div>
 		<div class="boardList_frame_right">

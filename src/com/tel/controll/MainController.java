@@ -34,11 +34,18 @@ import com.tel.model.MainService;
 		@RequestMapping(value="/mainDP.do") 
 		public String mainDP(HttpServletRequest request,Model model) {
 			System.out.println("메인 페이지 왔습니다.");
-			int mIdx = Integer.parseInt(request.getParameter("midx"));
-			int dIdx = Integer.parseInt(request.getParameter("didx"));
+			HttpSession session=request.getSession();
+			
+//			int mIdx = Integer.parseInt(request.getParameter("midx"));
+//			int dIdx = Integer.parseInt(request.getParameter("didx"));
+			int mIdx = (int)session.getAttribute("midx");
+			int dIdx = (int)session.getAttribute("didx");
+			
+			System.out.println("mainDP midx: "+mIdx);
+			System.out.println("mainDP didx: "+dIdx);
+			
 			MemberDTO member = mainService.member(mIdx);
 			
-			HttpSession session=request.getSession();
 			
 			List<Individual_work_DTO> iw_list = mainService.iw_list(mIdx);
 			List<Department_work_DTO> dw_list = mainService.dw_list(dIdx);
@@ -53,8 +60,8 @@ import com.tel.model.MainService;
 			attDTO = mainService.checkTime(attDTO);
 			
 			session.setAttribute("attDTO", attDTO);
-			session.setAttribute("midx", mIdx);
-			session.setAttribute("didx", dIdx);
+//			session.setAttribute("midx", mIdx);
+//			session.setAttribute("didx", dIdx);
 			session.setAttribute("member", member);
 			session.setAttribute("iwlistSessiom", iw_list);
 			session.setAttribute("dwlistSessiom", dw_list);

@@ -26,6 +26,8 @@ public class BoardController {
 	//게시판 페이지 이동 ================================================================================
 	@RequestMapping(value="/createBoardePg.do")
 	public String createBoardePg(HttpServletRequest request, Model model) {
+		int pg = Integer.parseInt(request.getParameter("pg"));
+		model.addAttribute("pg",pg);
 		return "board/createBoardePg";
 		
 	}
@@ -33,27 +35,29 @@ public class BoardController {
 	//게시판 추가 ================================================================================
 	@RequestMapping(value="/createBoard.do", method=RequestMethod.POST)
 	public String createBoard(HttpServletRequest request, Model model) {
-		HttpSession session = request.getSession();
-		
-		String midx = request.getParameter("midx");
-		String didx = request.getParameter("didx");
-		
+		HttpSession session=request.getSession();
+		int pg = Integer.parseInt(request.getParameter("pg"));
+		String midx = String.valueOf((int)session.getAttribute("midx"));
+		String didx = String.valueOf((int)session.getAttribute("didx"));
 		String bTitle = request.getParameter("bTitle");
 		String bContent = request.getParameter("bContent");
 		
+//		System.out.println("게시판추가 midx: "+midx);
+//		System.out.println("게시판추가 didx: "+didx);
+//		System.out.println("게시판추가 bTitle: "+bTitle);
+//		System.out.println("게시판추가 bContent: "+bContent);
+		
 		int n = service.createBoard(bTitle, bContent, midx, didx);
 		
-		return "redirect:readBoardList.do";
+		return "redirect:readBoardList.do?pg=1";
 		
 	}
 
 	//게시판 리스트 불러오기 ================================================================================
 	@RequestMapping(value="/readBoardList.do")
 	public String readBoardList(HttpServletRequest request, Model model) {
-		
 		String midx = request.getParameter("midx");
 		String didx = request.getParameter("didx");
-
 		//데이터 가져오기
 		int pg = Integer.parseInt(request.getParameter("pg"));
 		
@@ -77,6 +81,7 @@ public class BoardController {
 		model.addAttribute("midx", midx);
 		model.addAttribute("didx", didx);
 		model.addAttribute("list", list);
+		model.addAttribute("pg", pg);
 		return "board/boardList";
 		
 	}
@@ -84,7 +89,10 @@ public class BoardController {
 	//게시판 객체 불러오기 ================================================================================
 	@RequestMapping(value="/readBoard.do")
 	public String readBoard(HttpServletRequest request, Model model) {
-
+		String pg = request.getParameter("pg");
+		
+		System.out.println("게시판 객체 불러오기: "+pg);
+		
 		String midx = request.getParameter("midx");
 		String didx = request.getParameter("didx");
 		int bIdx = Integer.parseInt(request.getParameter("bIdx"));
@@ -94,6 +102,7 @@ public class BoardController {
 		model.addAttribute("midx", midx);
 		model.addAttribute("didx", didx);
 		model.addAttribute("dto", dto);
+		model.addAttribute("pg", pg);
 		
 		return "board/boardOb";
 	}
@@ -107,6 +116,7 @@ public class BoardController {
 		model.addAttribute("bContent", request.getParameter("bContent"));
 		model.addAttribute("bDate", request.getParameter("bDate"));
 		model.addAttribute("mName", request.getParameter("mName"));
+		model.addAttribute("pg", request.getParameter("pg"));
 		
 		return "board/boardUpPg";
 		
@@ -118,11 +128,11 @@ public class BoardController {
 		int bIdx = Integer.parseInt(request.getParameter("bIdx"));
 		String bTitle = request.getParameter("bTitle");
 		String bContent = request.getParameter("bContent");
-		
+		String pg = request.getParameter("pg");
 		int n = service.updateBoard(bIdx, bTitle, bContent);
 		
 		model.addAttribute("bIdx", bIdx);
-		return "redirect:readBoard.do";
+		return "redirect:readBoardList.do?pg="+pg;
 	}
 	
 	//게시판 삭제 ================================================================================
@@ -130,8 +140,9 @@ public class BoardController {
 	public String deleteBoard(HttpServletRequest request, Model model) {
 		int bIdx = Integer.parseInt(request.getParameter("bIdx"));
 		int n = service.deleteBoard(bIdx);
-		
-		return "redirect:readBoardList.do";
+		String pg = request.getParameter("pg");
+		System.out.println("게시판 삭제 pg: "+pg);
+		return "redirect:readBoardList.do?pg="+pg;
 	}
 	
 

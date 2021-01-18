@@ -36,7 +36,7 @@ p:dataSource-ref="dataSource" p:configLocation="classpath:mybatis/mybatis-config
 </bean>
 <bean id = "uploadPath" class="java.lang.String">
 <!--	<constructor-arg value="C:\WorkSpace_Spring\login\src\main\webapp\resources\profileImage"> -->
-	<constructor-arg value="C:\Users\kkm\git\Telecommuting\web\resources\profileImage">
+	<constructor-arg value="C:\Users\user\Documents\workspace-sts-3.9.6.RELEASE\Telecommuting_shin\web\resources\profileImage">
 	</constructor-arg>
 </bean>
 

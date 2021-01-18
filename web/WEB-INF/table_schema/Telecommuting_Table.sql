@@ -1,5 +1,5 @@
 
-/* 21.01.04 수정 */
+/* 21.01.17 수정 */
 
 SELECT * FROM tab;
 SELECT * FROM USER_SEQUENCES;
@@ -198,7 +198,7 @@ insert into member values(sq_midx.nextval,'개똥이','aaaa','61be55a8e2f6b4e172
 insert into member values(sq_midx.nextval,'진달래','bbbb','81cc5b17018674b401b42f35ba07bb79e211239c23bffe658da1577e3e646877',
 							'010-5678','010-3333','n@n.com',
 								'서울', sysdate, 105, '2021-01-09car1.png', 'TOKEN',1);
-insert into member values(sq_midx.nextval,'진달래','date','0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681',
+insert into member values(sq_midx.nextval,'데이트','date','0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681',
 							'010-5678','010-3333','n@n.com',
 								'서울', sysdate, 105, '2021-01-09car1.png', 'TOKEN',1);
 insert into member values(sq_midx.nextval,'소나무','cccc','b6fbd675f98e2abd22d4ed29fdc83150fedc48597e92dd1a7a24381d44a27451',
@@ -269,17 +269,8 @@ INSERT INTO BOARD(B_IDX, B_TITLE, B_CONTENT, B_DATE, M_IDX, D_IDX)
 	VALUES(SQ_BIDX.NEXTVAL, '첫게시글', '첫게시글 내용', SYSDATE, '102', '105');
 
 	
+INSERT INTO ATTENDANCE VALUES(SQ_AIDX.NEXTVAL, ' ', ' ', 
+			'위도', '경도', 102, 105)
 	
 	
-SELECT MEMBER.M_IDX, M_NAME, A_GOTIME
-			FROM MEMBER,ATTENDANCE
-			WHERE MEMBER.M_IDX=ATTENDANCE.M_IDX AND MEMBER.D_IDX=105
-			and ATTENDANCE.A_GOTIME LIKE '%2021년%'
-			
-			
-SELECT ROWNUM RN, AA.* FROM (SELECT * FROM BOARD ORDER BY B_IDX DESC)AA			
-	
-SELECT * FROM (SELECT ROWNUM RN, AA.* FROM (SELECT * FROM BOARD ORDER BY B_IDX DESC)AA)
-WHERE RN>=1 AND RN<=3
-SELECT COUNT(*) FROM BOARD			
 			
