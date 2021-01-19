@@ -37,6 +37,7 @@
 			근태
 		</div>
 		<div class="attMain_frame_left_content">
+			<div class="attMain_frame_left_content_main">
 			<c:choose>
 				<c:when test="${member.m_level==0 || member.m_level==1}">
 					<c:if test="${!empty dm_list}">
@@ -44,15 +45,16 @@
 							<c:set var="TextValue" value="${ob.a_goTime}" />
 							<div id="attlist+${status.index}">${ob.m_name}:
 								${fn:substring(TextValue,14,21) }</div>
-							<br>
 						</c:forEach>
 					</c:if>
-					<div>
-						<input id="time" type="button" value="근태 관리" onclick="sendLink()" class="attMain_btn">
-					</div>
+					
 				</c:when>
 
 			</c:choose>
+			</div>
+			<div>
+						<input id="time" type="button" value="근태 관리" onclick="sendLink()" class="attMain_btn">
+				</div>
 		</div>	
 		
 		

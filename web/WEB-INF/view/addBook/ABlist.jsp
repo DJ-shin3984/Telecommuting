@@ -22,7 +22,8 @@
 			<c:forEach var="ob" items="${addBookList}">
 				<div class="oneline">	
 					<a href="/Tel/AddDetail.do?midx=${ob.m_idx}&didx=${ob.d_idx}">
-					<span class="name">${ob.m_name}</span> <span class="phone">연락처:${ob.m_phone}</span> </a>
+					<span class="name">${ob.m_name}</span> 
+					<span class="phone">${ob.m_phone}</span> </a>
 				</div>
 			</c:forEach>
 		</c:if>

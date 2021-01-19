@@ -55,7 +55,7 @@ html,body{
 	
 }
 
-.attMain_frame_left_content{
+.attMain_frame_left_content_main{
 	margin-top:60px;
 	margin-bottom:60px;
 	
@@ -71,9 +71,17 @@ html,body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction:column;
+	
 	
 		font-family: 'Jeju Gothic', serif;
 		font-size:15px;
+	
+}
+.attMain_frame_left_content_main div{
+	
+	margin-top:5px;
+	margin-bottom:5px;
 	
 }
 

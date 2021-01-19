@@ -29,19 +29,38 @@ html,body{
 
 .ABdetail_frame_main{
 	
-	width: 800px;
-		font-family: 'Jeju Gothic', serif;
+	width: 1000px;
+	font-family: 'Jeju Gothic', serif;
+	border : 2px solid black;
+	padding:20px;
+	border-radius: 15px;
+	display: flex;
 	
 }
 
-.ABdetail_frame_main div{
+.ABdetail_frame_main img{
 
+	display: block;
+	margin-right:150px;
+}
+
+
+.ABdetail_frame_main_number{
+	font-weight: bold;
+	
+}
+
+.ABdetail_frame_main_content{
+	margin-top:35px;
+}
+
+
+.ABdetail_frame_main_content div{
 	margin-top:15px;
-	margin-bottom:15px;
+		margin-bottom:15px;
+	
+}
 
-	
-	}
-	
 	
 	
 .img{
@@ -56,7 +75,7 @@ height: 400px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
+	margin-top:30px;
 	
 	}
 
@@ -66,9 +85,6 @@ height: 400px;
 	display: block;
 	margin-left:10px;
 	margin-right: 10px;
-	
-	
-		
 	width:80px;
 	height:30px;
 	background-color: #e8eae6;

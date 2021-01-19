@@ -15,8 +15,11 @@
 <div class="ABdetail_frame">
 
 	<div class="ABdetail_frame_main">
-		<div>사원 번호: ${member.m_idx}</div> 
+		<div class="ABdetail_frame_main_number">사원 번호: ${member.m_idx}</div> 
+		<div>
 		 <img src="/Tel/resources/profileImage/${member.m_photo}" width="50" height="50" border="0" class="img">
+		</div>
+		<div class="ABdetail_frame_main_content">
 		<div>이름: ${member.m_name}</div> 
 		<div>아이디: ${member.m_id} </div> 
 		<%-- <div>비밀번호: ${member.m_pw}</div>  --%>
@@ -27,6 +30,7 @@
 		<div>입사일: ${member.m_empdate}</div> 
 		<div>부서번호: ${member.d_idx}</div> 
 		<div>권한접근Lv: ${member.m_level}</div> 
+		</div>
 	</div>
 	
 	<div class="btn_bar">

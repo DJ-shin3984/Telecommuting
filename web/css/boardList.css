@@ -90,16 +90,18 @@ html,body{
 .idx {
 	display:inline-block;
 	width:150px;
-	
+	text-align: center;
 }
 
 .title {
 	display:inline-block;
 	width:650px;
+	text-align: center;
 }
 .date {
 	display:inline-block;
 	width:150px;
+	text-align: center;
 }
 
 

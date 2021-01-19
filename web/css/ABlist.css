@@ -97,10 +97,12 @@ html,body{
 .name{
 	display: inline-block;
 	width:200px;
+	text-align: center;
 }
 .phone{
-		display: inline-block;
+	display: inline-block;
 	width:300px;
+	text-align: center;
 }
 
 
